@@ -1,1 +1,1 @@
-One day we'll find the legendary 9 tile.
+Watashi no na wa Kira Yoshiakage
