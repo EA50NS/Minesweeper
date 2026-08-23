@@ -2,24 +2,21 @@ package game;
 
 import javax.swing.*;
 import java.awt.GridLayout;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Collections;
 
-class createGrid {
-    public static void main(String[] args) {
 
+class CreateGrid {
+    public final int x = 9;
+    public final int y = 9;
+    public int flagCount, bombCount = 10;
+
+    public Cell[][] game_grid = new Cell[x][y];        // backend manager
+    public JButton[][] buttons = new JButton[x][y];    // visual button display
+    public boolean[][] bombs = new boolean[x][y];      // bomb locations
+
+    public void start_game(){
         JFrame frame = new JFrame("Minesweeper");
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
-        int x = 9;                                  // length
-        int y = 9;                                  // width
-        int z = x*y;                                // no. of tiles
-        int flagCount, bombCount = 10;              // no. of bombs and flags
-
-        Cell[][] game_grid = new Cell[x][y];        // backend manager
-        JButton[][] buttons = new JButton[x][y];    // visual button display
-        boolean[][] bombs = new boolean[x][y];      // bomb locations
 
         GridLayout view_grid = new GridLayout(x, y, 0, 0);
         panel.setLayout(view_grid);
@@ -46,6 +43,7 @@ class createGrid {
             }
         }
 
+        // render the buttons
         for (int i = 0; i < x; i++){
             for (int j = 0; j < y; j++){
                 if (!bombs[i][j]){
