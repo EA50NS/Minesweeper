@@ -53,12 +53,37 @@ public class Cell {
         this.has_flag = true;
     }
 
-    // TODO: FINISH THIS
-    public int check_neighbour_for_bomb(Cell cell){
-        int bombs = 0;
-        int myX = cell.getX();
-        int myY = cell.getY();
-        return bombs;
+    public int check_neighbour_for_bomb(Cell[][] grid, Cell cell){
+        int neighbour_bombs = 0;
+
+        if(grid[x-1][y].is_bomb && grid[x-1][y] != null){
+            neighbour_bombs++;
+        }
+        if(grid[x-1][y-1].is_bomb && grid[x-1][y-1] != null){
+            neighbour_bombs++;
+        }
+        if(grid[x-1][y+1].is_bomb && grid[x-1][y+1] != null){
+            neighbour_bombs++;
+        }
+
+        if(grid[x][y+1].is_bomb && grid[x][y+1] != null){
+            neighbour_bombs++;
+        }
+        if(grid[x][y-1].is_bomb && grid[x-1][y-1] != null){
+            neighbour_bombs++;
+        }
+
+        if(grid[x+1][y-1].is_bomb && grid[x+1][y-1] != null){
+            neighbour_bombs++;
+        }
+        if(grid[x+1][y].is_bomb && grid[x+1][y] != null){
+            neighbour_bombs++;
+        }
+        if(grid[x+1][y+1].is_bomb && grid[x+1][y+1] != null){
+            neighbour_bombs++;
+        }
+
+        return neighbour_bombs;
     }
 
 
