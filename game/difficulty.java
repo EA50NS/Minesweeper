@@ -2,6 +2,8 @@ package game;
 
 import java.awt.*;
 
+import javax.swing.JButton;
+
 // Driver Class
 class Difficulty {
     // Main Function
@@ -29,6 +31,9 @@ class Difficulty {
         Checkbox c4 = new Checkbox("Hard (30x16 grid, 99 mines)");
         c4.setBounds(100, 250, 200, 50);
         f.add(c4);
+
+        JButton play = new JButton("Play!");
+        f.add(play);
 
         f.setSize(500, 500);
         f.setLayout(null);
